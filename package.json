@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Anffaloff/syberia#readme",
   "dependencies": {
     "browser-sync": "^2.26.12",
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-watch": "^5.0.1"
   }
 }
