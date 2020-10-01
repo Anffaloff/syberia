@@ -1,0 +1,23 @@
+{
+  "name": "syberia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anffaloff/syberia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anffaloff/syberia/issues"
+  },
+  "homepage": "https://github.com/Anffaloff/syberia#readme",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
