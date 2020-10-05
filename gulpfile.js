@@ -4,6 +4,8 @@ const watch = require('gulp-watch');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
+const plumber = require('gulp-plumber');
+const notify = require("gulp-notify");
 
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -23,6 +25,15 @@ gulp.task('watch', function () {
 
 gulp.task('scss', function(callback) {
     return gulp.src ('./src/scss/style.scss')
+        .pipe(plumber({
+            errorHandler: notify.onError(function(err){
+                return {
+                    title:'Styles',
+                    sound: false,
+                    message: err.message
+                }
+            })
+        }))
         .pipe(sourcemaps.init())
             .pipe(sass())
             .pipe(autoprefixer({
