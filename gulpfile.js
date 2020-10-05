@@ -16,11 +16,10 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function () {
     watch('./src/**/*.html', gulp.parallel ( browserSync.reload ));
     watch('./src/css/**/*.css', gulp.parallel ( browserSync.reload ));
-    // watch('./src/scss/**/*.scss', gulp.parallel ( browserSync.reload ));
-
+    watch('./src/scss/**/*.scss', function () {
+        setTimeout (gulp.parallel ('scss'), 1000)
+    });
 });
-
-// gulp.task('default', gulp.series('scss', gulp.parallel('browser-sync', 'watch')));
 
 gulp.task('scss', function(callback) {
     return gulp.src ('./src/scss/style.scss')
@@ -34,4 +33,4 @@ gulp.task('scss', function(callback) {
     callback();
 });
 
-gulp.task('default', gulp.parallel('browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('browser-sync', 'watch', 'scss'));
