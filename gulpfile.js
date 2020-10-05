@@ -2,6 +2,8 @@ const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const watch = require('gulp-watch');
 const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -22,7 +24,12 @@ gulp.task('watch', function () {
 
 gulp.task('scss', function(callback) {
     return gulp.src ('./src/scss/style.scss')
-        .pipe(sass())
+        .pipe(sourcemaps.init())
+            .pipe(sass())
+            .pipe(autoprefixer({
+                overrideBrowserslist: ['last 4 versions']
+            }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./src/css/'));
     callback();
 });
