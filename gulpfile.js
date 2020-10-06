@@ -6,23 +6,6 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const notify = require("gulp-notify");
-const fileinclude = require('gulp-file-include');
-
-gulp.task('html', function(callback) {
-    return gulp.src ('./src/html/*.html')
-        .pipe(plumber({
-            errorHandler: notify.onError(function(err){
-                return {
-                    title:'HTML include',
-                    sound: false,
-                    message: err.message
-                }
-            })
-        }))
-        .pipe(fileinclude({prefix: '@@'}))
-        .pipe(gulp.dest ('./src'))
-    callback();
-});
 
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -37,7 +20,7 @@ gulp.task('watch', function () {
     watch('./src/scss/**/*.scss', function () {
         setTimeout (gulp.parallel ('scss'), 1000)
     });
-    watch('./src/html/**/*.html', gulp.parallel ('html'));
+    // watch('./src/html/**/*.html', gulp.parallel ('html'));
 });
 
 gulp.task('scss', function(callback) {
@@ -61,4 +44,4 @@ gulp.task('scss', function(callback) {
     callback();
 });
 
-gulp.task('default', gulp.parallel('browser-sync', 'watch', 'scss', 'html'));
+gulp.task('default', gulp.parallel('browser-sync', 'watch', 'scss'));
