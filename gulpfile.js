@@ -6,7 +6,15 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const notify = require("gulp-notify");
-const pug = require('pug');
+const pug = require('gulp-pug');
+
+gulp.task('pug', function() {
+    return gulp.src('./src/pug/pages/**/*.pug')
+        .pipe(pug({
+            pretty: true
+        }))
+        .pipe(gulp.dest('./src/'))
+});
 
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -21,7 +29,7 @@ gulp.task('watch', function () {
     watch('./src/scss/**/*.scss', function () {
         setTimeout (gulp.parallel ('scss'), 1000)
     });
-    // watch('./src/html/**/*.html', gulp.parallel ('html'));
+    watch('./src/pug/**/*.pug', gulp.parallel ('pug'));
 });
 
 gulp.task('scss', function(callback) {
@@ -45,4 +53,4 @@ gulp.task('scss', function(callback) {
     callback();
 });
 
-gulp.task('default', gulp.parallel('browser-sync', 'watch', 'scss'));
+gulp.task('default', gulp.parallel('browser-sync', 'watch', 'scss', 'pug'));
