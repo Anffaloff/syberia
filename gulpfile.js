@@ -24,7 +24,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('scss', function(callback) {
-    return gulp.src ('./src/scss/style.scss')
+    return gulp.src ('./src/scss/main.scss')
         .pipe(plumber({
             errorHandler: notify.onError(function(err){
                 return {
