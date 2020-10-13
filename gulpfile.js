@@ -10,6 +10,15 @@ const pug = require('gulp-pug');
 
 gulp.task('pug', function() {
     return gulp.src('./src/pug/pages/**/*.pug')
+        .pipe(plumber({
+            errorHandler: notify.onError(function(err){
+                return {
+                    title:'Pug',
+                    sound: false,
+                    message: err.message
+                }
+            })
+        }))
         .pipe(pug({
             pretty: true
         }))
