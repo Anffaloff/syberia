@@ -8,7 +8,7 @@ const plumber = require('gulp-plumber');
 const notify = require("gulp-notify");
 const pug = require('gulp-pug');
 
-gulp.task('pug', function() {
+gulp.task('pug', function(callback) {
     return gulp.src('./src/pug/pages/**/*.pug')
         .pipe(plumber({
             errorHandler: notify.onError(function(err){
@@ -24,6 +24,8 @@ gulp.task('pug', function() {
         }))
         .pipe(gulp.dest('./build/'))
         .pipe(browserSync.stream())
+    callback()
+
 });
 
 gulp.task('browser-sync', function() {
@@ -32,6 +34,18 @@ gulp.task('browser-sync', function() {
             baseDir: "./build/"
         }
     })
+});
+
+gulp.task('copy:img', function(callback) {
+    return gulp.src('./src/img/**/*.*')
+      .pipe(gulp.dest('./build/img/'))
+    callback()
+});
+
+gulp.task('copy:js', function(callback) {
+    return gulp.src('./src/js/**/*.*')
+      .pipe(gulp.dest('./build/js/'))
+    callback()
 });
 
 gulp.task('watch', function () {    
@@ -64,3 +78,12 @@ gulp.task('scss', function(callback) {
 });
 
 gulp.task('default', gulp.parallel('browser-sync', 'watch', 'scss', 'pug'));
+
+gulp.task(
+    'default',
+    gulp.series(
+        gulp.parallel('scss', 'pug', 'copy:img', 'copy:js'),
+        gulp.parallel('browser-sync', 'watch')
+        )
+);
+
