@@ -7,6 +7,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const notify = require("gulp-notify");
 const pug = require('gulp-pug');
+const del = require('del');
 
 gulp.task('pug', function(callback) {
     return gulp.src('./src/pug/pages/**/*.pug')
@@ -79,11 +80,15 @@ gulp.task('scss', function(callback) {
 
 gulp.task('default', gulp.parallel('browser-sync', 'watch', 'scss', 'pug'));
 
+gulp.task('clean:buid', function() {
+    return del('./build')
+});
+
 gulp.task(
     'default',
     gulp.series(
+        gulp.parallel('clean:buid'),
         gulp.parallel('scss', 'pug', 'copy:img', 'copy:js'),
         gulp.parallel('browser-sync', 'watch')
         )
 );
-
