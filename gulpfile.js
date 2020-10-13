@@ -26,7 +26,6 @@ gulp.task('pug', function(callback) {
         .pipe(gulp.dest('./build/'))
         .pipe(browserSync.stream())
     callback()
-
 });
 
 gulp.task('browser-sync', function() {
@@ -49,11 +48,14 @@ gulp.task('copy:js', function(callback) {
     callback()
 });
 
-gulp.task('watch', function () {    
+gulp.task('watch', function () {  
+    watch( ['./build/js/**/*.*', './build/img/**/*.*'], gulp.parallel(browserSync.reload) )
     watch('./src/scss/**/*.scss', function () {
         setTimeout (gulp.parallel ('scss'), 1000)
     })
     watch('./src/pug/**/*.pug', gulp.parallel ('pug'))
+    watch('./src/img/**/*.*', gulp.parallel ('copy:img'))
+    watch('./src/js/**/*.*', gulp.parallel ('copy:js'))
 });
 
 gulp.task('scss', function(callback) {
@@ -78,7 +80,7 @@ gulp.task('scss', function(callback) {
     callback();
 });
 
-gulp.task('default', gulp.parallel('browser-sync', 'watch', 'scss', 'pug'));
+// gulp.task('default', gulp.parallel('browser-sync', 'watch', 'scss', 'pug'));
 
 gulp.task('clean:buid', function() {
     return del('./build')
