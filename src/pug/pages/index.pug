@@ -7,9 +7,9 @@ html(lang="en")
         title Document
 
     body
-        .header
-            h1 Hello from pug!
-            h2 Заебал ваш Pug
-            h3 Но мы крепчаем!!!!!!
-            h2 Уууу сука!!!!
+        include ./../sections/_header.pug
+        include ./../sections/_content.pug
+        include ./../sections/_footer.pug
+
         script(src="js/main.js")
+            
