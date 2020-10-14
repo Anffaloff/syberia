@@ -1,27 +1,4 @@
-include ./../mixins/_card.pug
+extends ./../layouts/main.pug
 
-
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        link(rel="stylesheet", href="css/main.css")
-        title Document
-    body
-
-        .card-holder
-
-            //- Карточка
-            
-            +card('Хуепл TV','$500','apple-tv.jpg')
-
-            +card('Хуепл TV','$300','apple-tv.jpg')
-
-            +card('Хуепл TV','$400','apple-tv.jpg')
-
-            +card('Хуепл TV','$200','apple-tv.jpg')
-
-
-        script(src="js/main.js")
+block content
+    h1 Эгей еб в рот

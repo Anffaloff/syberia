@@ -1,1 +1,1 @@
-console.log ('Ura!!!! Rabotaet!');
+console.log('Hi!');
