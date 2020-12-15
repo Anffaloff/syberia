@@ -13,16 +13,24 @@
 
 body {
     background: url(../img/image.jpg) 0 0 no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .header {
 }
 .header__body {
     display: flex;
+    justify-content: space-between;
     border: 2px solid #ccc;
     font-size: 50px;    
 }
+img {
+    max-width: 100%;
+}
 .header__logo {
+    flex-shrink: 0;
+    max-width: 15%;
 }
 .header__main-title {
 }
