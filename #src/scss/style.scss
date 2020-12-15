@@ -11,6 +11,20 @@
 
 @import "fonts";
 
-div {
+body {
     background: url(../img/image.jpg) 0 0 no-repeat;
+}
+
+.header {
+}
+.header__body {
+    display: flex;
+    border: 2px solid #ccc;
+    font-size: 50px;    
+}
+.header__logo {
+}
+.header__main-title {
+}
+.header__phones {
 }

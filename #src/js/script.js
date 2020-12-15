@@ -1,4 +1,4 @@
-@@include("alert.js")
+// @@include("alert.js")
 
 // JS-функция определения поддержки WebP
 
