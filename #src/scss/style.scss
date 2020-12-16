@@ -33,6 +33,9 @@ img {
     max-width: 15%;
 }
 .header__main-title {
+    text-align: center;
 }
 .header__phones {
+    flex-shrink: 0;
+    max-width: 15%;
 }
