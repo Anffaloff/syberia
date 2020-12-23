@@ -51,8 +51,9 @@ let { src, dest } = require('gulp'),
 
     smartGrid = require('smart-grid');
 
-function grid() {
-    smartGrid("./#src/scss")  
+function grid(done) {
+    smartGrid("./#src/scss")
+    done()  
 } 
 
 function browsersync(params) {
