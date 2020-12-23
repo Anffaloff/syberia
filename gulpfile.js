@@ -47,8 +47,13 @@ let { src, dest } = require('gulp'),
     svgSprite = require('gulp-svg-sprite'),
     ttf2woff = require('gulp-ttf2woff'),
     ttf2woff2 = require('gulp-ttf2woff2'),
-    fonter = require('gulp-fonter');
+    fonter = require('gulp-fonter'),
 
+    smartGrid = require('smart-grid');
+
+function grid() {
+    smartGrid("./#src/scss")  
+} 
 
 function browsersync(params) {
     browserSync.init({ 
@@ -209,5 +214,5 @@ exports.html = html;
 exports.build = build; 
 exports.watch = watch;
 exports.default = watch;
-
 exports.clean = clean;
+exports.grid = grid;
