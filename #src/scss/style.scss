@@ -30,17 +30,21 @@ body {
 //     width: 100%;
 // }
 
-.headerItems {
+.headerItems, .main__body {
     @include row-flex;
     justify-content: space-between;
 }
 
-.headerItem {
+.headerItem, .main__card {
     @include col();
 }
 
-.headerItems__logo, .headerItems__phones {
+.headerItems__logo, .headerItems__phones, {
     @include size(3);
+}
+
+.main__card {
+    @include size(4);
 }
 
 .headerItems__main-title {
