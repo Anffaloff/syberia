@@ -1,3 +1,7 @@
+@import "smart-grid";
+
+@include reset;
+
 @mixin font($font_name, $file_name, $weight, $style) {
 
     @font-face {
@@ -11,44 +15,74 @@
 
 @import "fonts";
 
+
 body {
     background: url(../img/image.jpg) 0 0 no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
-.header {
-}
-.header__body {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid #ccc;
-    font-size: 50px;    
-}
-img {
-    max-width: 100%;
-}
-.header__logo {
-    flex-shrink: 0;
-    max-width: 15%;
-}
-.header__main-title {
-    text-align: center;
-}
-.header__phones {
-    flex-shrink: 0;
-    max-width: 15%;
+.container {
+    @include wrapper;
 }
 
-.main__body {
+// img {
+//     width: 100%;
+// }
+
+.headerItems {
+    @include row-flex;
+    justify-content: space-between;
+}
+
+.headerItem {
+    @include col();
+}
+
+.headerItems__logo, .headerItems__phones {
+    @include size(3);
+}
+
+.headerItems__main-title {
+    font-size: 200%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    @include size(6);
 }
-.main__card {
-}
-.card__title {
-}
-.card__img {
-}
-.card__text {
-}
+
+// .header {
+// }
+// .header__body {
+//     align-items: center;
+//     display: flex;
+//     justify-content: space-between;
+//     border: 2px solid #ccc;
+//     font-size: 50px;    
+// }
+// img {
+//     max-width: 100%;
+// }
+// .header__logo {
+//     flex-shrink: 0;
+//     max-width: 15%;
+// }
+// .header__main-title {
+//     text-align: center;
+// }
+// .header__phones {
+//     flex-shrink: 0;
+//     max-width: 15%;
+// }
+
+// .main__body {
+//     display: flex;
+// }
+// .main__card {
+// }
+// .card__title {
+// }
+// .card__img {
+// }
+// .card__text {
+// }
