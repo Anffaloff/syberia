@@ -16,11 +16,12 @@
 @import "fonts";
 
 
-// body {
-//     background: url(../img/image.jpg) 0 0 no-repeat;
-//     background-size: cover;
-//     background-attachment: fixed;
-// }
+body {
+    background: #29292B;
+    // background: url(../img/image.jpg) 0 0 no-repeat;
+    // background-size: cover;
+    // background-attachment: fixed;
+}
 
 .container {
     @include wrapper;
