@@ -44,7 +44,7 @@ footer {
 
 .headerItems, .main__body {
     @include row-flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .headerItem, .main__card {
