@@ -53,7 +53,7 @@ let { src, dest } = require('gulp'),
 
 function grid(done) {
     let options = require ("./smartgrid.js")
-    smartGrid("./#src/scss", options)
+    smartGrid("./#src/scss/", options)
     done()  
 } 
 
