@@ -1,5 +1,5 @@
 {
-  "name": "train",
+  "name": "syberia",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Anffaloff/train.git"
+    "url": "https://github.com/Anffaloff/syberia.git"
   },
   "author": "anffaloff",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Anffaloff/train/issues"
+    "url": "https://github.com/Anffaloff/syberia.git"
   },
-  "homepage": "https://github.com/Anffaloff/train#readme",
+  "homepage": "https://github.com/Anffaloff/syberia.git",
   "devDependencies": {
     "browser-sync": "^2.26.13",
     "del": "^6.0.0",
