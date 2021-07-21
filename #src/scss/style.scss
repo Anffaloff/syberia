@@ -27,26 +27,6 @@
     @include size(3);
 }
 
-// body {
-//     background: url(../img/image.jpg) 0 0 no-repeat;
-// }
-.product-category {
-
-		// .product-category__title
-
-		&__title {
-            font-size: 20px;
-            color: rgb(235, 21, 21);
-		}
-
-		// .product-category__img
-
-		&__img {
-            background: url(../img/image.jpg) 0 0 no-repeat;
-		}
-
-		// .product-category__description
-
-		&__description {
-		}
+body {
+    background: url(../img/image.jpg) 0 0 no-repeat;
 }
