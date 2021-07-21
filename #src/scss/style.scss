@@ -14,6 +14,11 @@
 
 @include reset;
 
+body {
+    background: url(../img/image.jpg) 0 0 no-repeat;
+    background-size: cover;
+}
+
 .wrapper {
     @include wrapper;
 }
@@ -24,10 +29,11 @@
 }
 
 .product-category {
+    border: 2px dotted;
     @include col;
     @include size(3);
+    @include size-md(6);
+    @include size-sm(12);
+    @include size-xs(12);
 }
 
-body {
-    background: url(../img/image.jpg) 0 0 no-repeat;
-}
