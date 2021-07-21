@@ -12,7 +12,11 @@
 @import "fonts";
 @import "smart-grid.scss";
 
-@include reset ();
+@include reset;
+
+.wrapper {
+    @include wrapper;
+}
 
 // body {
 //     background: url(../img/image.jpg) 0 0 no-repeat;
