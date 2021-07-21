@@ -20,6 +20,7 @@
 
 .main-showcase__row {
     @include row-flex;
+    // justify-content: space-around;
 }
 
 .product-category {
