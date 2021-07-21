@@ -34,6 +34,7 @@ body {
     @include size(3);
     @include size-md(6);
     @include size-sm(12);
-    @include size-xs(12);
+    
+    margin: $offset_one_side;
 }
 
