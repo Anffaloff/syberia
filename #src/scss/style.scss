@@ -10,6 +10,9 @@
 }
 
 @import "fonts";
+@import "smart-grid.scss";
+
+@include reset ();
 
 // body {
 //     background: url(../img/image.jpg) 0 0 no-repeat;

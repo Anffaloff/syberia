@@ -1,4 +1,4 @@
 module.exports = {
-    columns: 24,
+    columns: 12,
     outputStyle: "scss"
  };
