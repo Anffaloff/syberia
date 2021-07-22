@@ -88,5 +88,26 @@ body {
     margin: $offset_one_side;
 }
 
+// footer
+
+.wrapper {
+}
+.footer-row {
+    @include row-flex;
+
+		// .footer-row__div
+
+		&__div {
+            border: 2px dotted;
+            @include col;
+            @include size(4);
+            @include size-md(4);
+            @include size-sm(4);
+            @include size-xs(4);
+		}
+}
+
+
+
 
 
