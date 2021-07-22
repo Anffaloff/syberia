@@ -22,6 +22,55 @@ body {
 .wrapper {
     @include wrapper;
 }
+// header
+
+.header {
+}
+.wrapper {
+}
+.header-row {
+    @include row-flex;
+    justify-content: space-around;
+
+		// .header-row__logo
+
+		&__logo {
+            border: 2px dotted;
+            @include col;
+            @include size(2);
+            @include size-md(2);
+            @include size-sm(2);
+            @include size-xs(2);
+            
+		}
+
+		// .header-row__main-tagline
+
+		&__main-tagline {
+            border: 2px dotted;
+            @include col;
+            @include size(8);
+            @include size-md(8);
+            @include size-sm(8);
+            @include size-xs(8);
+		}
+
+		// .header-row__contacts
+
+		&__contacts {
+            border: 2px dotted;
+            @include col;
+            @include size(2);
+            @include size-md(2);
+            @include size-sm(2);
+            @include size-xs(2);
+		}
+}
+.main-tagline {
+}
+
+
+// main-showcase
 
 .main-showcase__row {
     @include row-flex;
@@ -34,7 +83,10 @@ body {
     @include size(3);
     @include size-md(6);
     @include size-sm(12);
+    @include size-xs(12);
     
     margin: $offset_one_side;
 }
+
+
 
