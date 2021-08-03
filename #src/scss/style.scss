@@ -17,6 +17,7 @@
 body {
     background: url(../img/background.jpg) 0 0 no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .wrapper {
@@ -84,6 +85,9 @@ body {
     @include size-md(6);
     @include size-sm(12);
     @include size-xs(12);
+
+    background: url(../img/Card-img-1.jpg) 0 0 no-repeat;
+    // background-size: cover;
     
     margin: $offset_one_side;
 }
