@@ -87,7 +87,8 @@ body {
     @include size-xs(12);
 
     background: url(../img/Card-img-1.jpg) 0 0 no-repeat;
-    // background-size: cover;
+    background-size: cover;
+    // background-attachment: fixed;
     
     margin: $offset_one_side;
 }
