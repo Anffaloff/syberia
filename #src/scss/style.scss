@@ -110,16 +110,24 @@ body {
 }
 .footer-row {
     @include row-flex;
+    color: antiquewhite;
 
-		// .footer-row__div
+        // .footer-row__div
 
 		&__div {
             border: 2px dotted;
             @include col;
-            @include size(4);
-            @include size-md(4);
-            @include size-sm(4);
-            @include size-xs(4);
+            @include size(3);
+            @include size-md(3);
+            @include size-sm(3);
+            @include size-xs(3);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+		
+            background: url(../img/Card-img.jpg) 0 0 no-repeat;
+            background-size: cover;
 		}
 }
 
