@@ -1,5 +1,7 @@
+@import "vars";
+
 body {
-    background-color: black;
+    background-color: $colorPrimary;
     font-size: 21px;
-    color: white;
+    color: $colorText;
 }
