@@ -22,7 +22,7 @@ const browserSync = require("browser-sync").create();
 
 const smartGrid = require('smart-grid');
 const gridOptPath = './smartgrid.js';
-
+const pathGrid = require('path');
 
 /* Paths */
 const srcPath = 'src/';
@@ -58,7 +58,7 @@ const path = {
 /* Tasks */
 
 function grid(done){
-    // delete require.cache[path.resolve(gridOptPath)];
+    delete require.cache[pathGrid.resolve(gridOptPath)];
     let options = require(gridOptPath);
     smartGrid('./src/assets/scss/', options);
     done();
