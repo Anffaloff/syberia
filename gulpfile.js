@@ -18,6 +18,11 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const browserSync = require("browser-sync").create();
 
+// подключение smartGrid
+
+const smartGrid = require('smart-grid');
+const gridOptPath = './smartgrid.js';
+
 
 /* Paths */
 const srcPath = 'src/';
@@ -51,6 +56,13 @@ const path = {
 
 
 /* Tasks */
+
+function grid(done){
+    // delete require.cache[path.resolve(gridOptPath)];
+    let options = require(gridOptPath);
+    smartGrid('./src/assets/scss/', options);
+    done();
+}
 
 function serve() {
     browserSync.init({
@@ -238,3 +250,4 @@ exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
+exports.grid = grid;
