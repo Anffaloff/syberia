@@ -18,12 +18,6 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const browserSync = require("browser-sync").create();
 
-// подключение smartGrid
-
-const smartGrid = require('smart-grid');
-const gridOptPath = './smartgrid.js';
-const pathGrid = require('path');
-
 /* Paths */
 const srcPath = 'src/';
 const distPath = 'dist/';
@@ -52,15 +46,19 @@ const path = {
     },
     clean: "./" + distPath
 }
+// подключение smartGrid
 
-
+const smartGrid = require('smart-grid');
+const gridOptPath = './smartgrid.js';
+// Это для кэширования smart-grid
+const pathGrid = require('path'); 
 
 /* Tasks */
 
 function grid(done){
     delete require.cache[pathGrid.resolve(gridOptPath)];
     let options = require(gridOptPath);
-    smartGrid('./src/assets/scss/', options);
+    smartGrid('./src/assets/scss/vendors/', options);
     done();
 }
 
