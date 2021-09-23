@@ -1,6 +1,6 @@
 @import "vars";
 @import "blocks/main.scss";
-@import "blocks/catalog";
+@import "blocks/catalog.scss";
 @import "vendors/smart-grid.scss";
 
 @include reset;
@@ -20,3 +20,7 @@ body {
 .container {
     @include wrapper;
 }
+
+// .catalog-items {
+//     @include row-flex;
+// }
