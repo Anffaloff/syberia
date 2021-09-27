@@ -3,3 +3,7 @@
 .catalog-items {
     @include row-flex;
 }
+
+.catalog-item {
+    @include col();
+}
