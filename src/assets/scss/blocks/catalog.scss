@@ -6,4 +6,5 @@
 
 .catalog-item {
     @include col();
+    @include size(4);
 }
