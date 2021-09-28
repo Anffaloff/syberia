@@ -58,7 +58,7 @@ const pathGrid = require('path');
 function grid(done){
     delete require.cache[pathGrid.resolve(gridOptPath)];
     let options = require(gridOptPath);
-    smartGrid('./src/assets/scss/vendors/', options);
+    smartGrid('./src/assets/scss/vendors', options);
     done();
 }
 
