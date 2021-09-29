@@ -1,11 +1,11 @@
 @import "vendors/smart-grid.scss";
 
-.catalog-items {
+.catalog__items {
     @include row-flex;
     justify-content: space-around;
 }
 
-.catalog-item {
+.catalog__item {
     @include col();
     @include size(4);
 }
